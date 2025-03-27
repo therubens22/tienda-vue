@@ -1,11 +1,22 @@
 <template>
-  <header class="bg-blue-600 text-white p-4">
-    <nav class="flex justify-between items-center">
-      <h1 class="text-xl font-bold">Mi Tienda</h1>
-      <ul class="flex space-x-4">
-        <li><a href="/" class="hover:text-gray-300">Inicio</a></li>
-        <li><a href="/about" class="hover:text-gray-300">Nosotros</a></li>
-        <li><a href="/cart" class="hover:text-gray-300">Carrito</a></li>
+  <header class="fixed top-0 left-0 w-full z-20 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-16 flex items-center px-6">
+    <!-- Logo -->
+    <img src="@/assets/img/logo.png" alt="Logo" class="h-52 w-auto mt-6" />
+
+    <!-- Menú de navegación -->
+    <nav class="ml-auto">
+      <ul class="flex space-x-6 text-white">
+        <li>
+          <a href="#home" class="flex items-center">
+            <font-awesome-icon :icon="['fas', 'home']" class="mr-2" /> 
+          </a>
+        </li>
+     
+        <li>
+          <a href="#contact" class="flex items-center">
+            <font-awesome-icon :icon="['fas', 'envelope']" class="mr-2" /> 
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -13,10 +24,17 @@
 
 <script>
 export default {
-  name: 'Header'
-}
+  name: "Header"
+};
 </script>
 
 <style scoped>
-/* Puedes agregar más estilos personalizados aquí si lo necesitas */
+header {
+  height: 60px; /* Hace que el header sea más angosto */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 </style>
