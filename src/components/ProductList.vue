@@ -1,28 +1,29 @@
 <template>
   <div class="product-list">
-    <ProductCard v-for="product in products" :key="product.name" :product="product" />
+    <Carousel @update-product="updateSelectedProduct" />
+    <ProductDetail v-if="selectedProduct" :product="selectedProduct" />
   </div>
 </template>
 
 <script>
-import { products } from "@/data/products.js";
-import ProductCard from "@/components/ProductCard.vue";
+import Carousel from "@/components/Carrusel.vue";
+import ProductDetail from "@/views/ProductDetail.vue";
+import { products } from "@/data/products"; 
 
 export default {
-  components: { ProductCard },
+  components: {
+    Carousel,
+    ProductDetail
+  },
   data() {
     return {
-      products
+      selectedProduct: products[0] // Iniciar con el primer producto
     };
+  },
+  methods: {
+    updateSelectedProduct(product) {
+      this.selectedProduct = product; // Actualiza el producto seleccionado
+    }
   }
 };
 </script>
-
-<style scoped>
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-</style>
