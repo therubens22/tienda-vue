@@ -8,12 +8,15 @@
     <ProductDetail />
     <Cart />
     <Checkout />
+    <Footer />
+    
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
+import Footer from './components/Footer.vue'
 import ProductList from './components/ProductList.vue'
 import ProductCard from './components/ProductCard.vue'
 import ProductDetail from './views/ProductDetail.vue'
@@ -32,6 +35,7 @@ export default {
     ProductDetail,
     Cart,
     Checkout,
+    Footer,
   }
 }
 </script>

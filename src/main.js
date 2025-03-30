@@ -8,10 +8,10 @@ import router from './router';
 // Importar Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faHome, faCogs, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCogs, faEnvelope, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 // Agregar iconos a la librería
-library.add(faHome, faCogs, faEnvelope);
+library.add(faHome, faCogs, faEnvelope, faShoppingCart);
 
 const app = createApp(App);
 

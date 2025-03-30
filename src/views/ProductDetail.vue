@@ -50,7 +50,7 @@ export default {
 
 button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: gray;
   color: white;
   border: none;
   border-radius: 5px;
@@ -58,6 +58,6 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  background-color: rgb(80, 80, 80);
 }
 </style>
