@@ -1,43 +1,38 @@
 <template>
-    <footer class="bg-gray-800 text-white py-6 mt-10">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex justify-between items-center">
-          <!-- Pie de página con derechos de autor (izquierda) -->
-          <p class="text-left">&copy; 2025 FabinaCrocc Store. Todos los derechos reservados.</p>
-  
-          <!-- Enlaces de navegación (íconos a la derecha) -->
-          <ul class="flex space-x-6 text-white">
-            <li>
-              <a href="#home" class="flex items-center">
-                <font-awesome-icon :icon="['fas', 'home']" class="mr-2" />
-              </a>
-            </li>
-            <li>
-              <router-link to="/cart" class="flex items-center">
-                <font-awesome-icon :icon="['fas', 'shopping-cart']" class="mr-2" />
-              </router-link>
-            </li>
-            <li>
-              <a href="#contact" class="flex items-center">
-                <font-awesome-icon :icon="['fas', 'envelope']" class="mr-2" />
-              </a>
-            </li>
-          </ul>
+  <footer class="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white text-sm py-6 mt-10">
+    <div class="max-w-screen-xl mx-auto px-6 flex justify-between items-center">
+      
+      <!-- Medios de pago (izquierda) -->
+      <div class="flex flex-col items-start">
+        <h3 class="font-bold text-lg">Medios de Pago</h3>
+        <div class="flex space-x-3 mt-2">
+          <a href="https://www.mercadopago.com" target="_blank">
+            <img src="@/assets/img/mercadopago.png" alt="MercadoPago" class="h-6 object-contain">
+          </a>
+          <a href="https://www.visa.com" target="_blank">
+            <img src="@/assets/img/tarjeta.png" alt="Visa" class="h-6">
+          </a>
+          <a href="https://www.paypal.com" target="_blank">
+            <img src="@/assets/img/paypal.jpeg" alt="PayPal" class="h-6">
+          </a>
         </div>
       </div>
-    </footer>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Footer'
-  }
-  </script>
-  
-  <style scoped>
-  footer {
-    background-color: #2d2d2d;
-    color: white;
-  }
-  </style>
-  
+
+      <!-- Derechos reservados (centrado) -->
+      <div class="flex-1 flex justify-center items-center">
+        <p>&copy; 2025 FabinaCrocc Store. Todos los derechos reservados.</p>
+      </div>
+
+      <!-- Sección de Ayuda (derecha) -->
+      <div class="flex flex-col ">
+        <h3 class="font-bold text-lg">Ayuda</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#" class="hover:underline">Cómo comprar</a></li>
+          <li><a href="#" class="hover:underline">Tipos de envío</a></li>
+          <li><a href="#" class="hover:underline">Política de Reembolso y Devoluciones</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+</template>

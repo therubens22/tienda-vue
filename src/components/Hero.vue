@@ -3,7 +3,7 @@
     <div class=" text-center backdrop-blur-xl bg-white/50 p-6 rounded-xl">
       <h1 class="text-4xl font-bold mb-4">Bienvenidos a Nuestra Tienda</h1>
       <p class="mb-6">Descubre nuestros productos exclusivos</p>
-      <button class="bg-gray-500 py-2 px-6 rounded-full text-xl">Ver Productos</button>
+      <button class="bg-gray-500 py-2 px-6 rounded-lg text-xl hover:bg-gray-800 transition duration-300">Ver Productos</button>
     </div>
   </section>
 </template>
