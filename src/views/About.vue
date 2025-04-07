@@ -1,11 +1,12 @@
 <template>
-  <div class="about">
-    <h2>Sobre Nosotros</h2>
-    <p>
+  <div class="max-w-3xl mx-auto text-center p-10 bg-white rounded-xl shadow-md m-4">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre Nosotros</h2>
+    <p class="text-lg text-gray-600 leading-relaxed">
       Bienvenidos a nuestra tienda de ropa. Aquí encontrarás lo mejor en moda con los estilos más actuales y a los mejores precios.
     </p>
   </div>
 </template>
+
 
 <script>
 export default {

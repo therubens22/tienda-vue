@@ -1,32 +1,17 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-between">
-    <div v-if="cartStore.cartItems.length > 0" class="cart p-6 bg-white rounded-lg shadow-lg max-w-lg mx-auto">
-      <h2 class="text-2xl font-bold text-center mb-6">
-        <LucideShoppingCart size="24" class="inline-block mr-2" /> Tu Carrito
-      </h2>
-
-      <div v-for="item in cartStore.cartItems" :key="item.id" class="cart-item mb-4 flex justify-between items-center p-4 border-b border-gray-200">
-        <p class="text-lg">{{ item.name }} - ${{ item.price }} (x{{ item.quantity }})</p>
-        <button @click="cartStore.removeFromCart(item.id)" class="bg-red-500 text-white py-1 px-4 rounded-lg hover:bg-red-700 transition duration-300">
-          Eliminar
-        </button>
+  <div class="bg-white shadow-md rounded-lg overflow-hidden w-full sm:w-72">
+    <img :src="image" alt="Producto" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h2 class="text-lg font-semibold">{{ title }}</h2>
+      <p class="text-sm text-gray-600 mb-2">{{ description }}</p>
+      <div class="flex justify-between items-center">
+        <span class="text-blue-600 font-bold">${{ price }}</span>
+        <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Agregar</button>
       </div>
-
-      <p class="text-lg font-bold text-right mt-4">Total: ${{ cartStore.totalPrice }}</p>
-
-      <button @click="checkout" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300">
-        Proceder al pago
-      </button>
     </div>
-
-    <!-- Mensaje centrado en la página cuando el carrito está vacío -->
-    <div v-else class="min-h-screen flex items-center justify-center text-gray-500 text-xl">
-      <p>El carrito está vacío</p>
-    </div>
-
-    <Footer />
   </div>
 </template>
+
 
 
 <script>

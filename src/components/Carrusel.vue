@@ -3,7 +3,7 @@
     <div class="carousel-wrapper">
       <div
         class="carousel-item"
-        v-for="(product, index) in products"
+        v-for="(product, index) in duplicatedProducts"
         :key="index"
         @click="selectProduct(product)"
       >
@@ -30,6 +30,11 @@ export default {
       products
     };
   },
+  computed: {
+    duplicatedProducts() {
+      return [...this.products, ...this.products]; // Duplicamos para animación infinita
+    }
+  },
   methods: {
     selectProduct(product) {
       this.$emit("update-product", product);
@@ -52,7 +57,8 @@ export default {
 .carousel-wrapper {
   display: flex;
   gap: 20px;
-  animation: slide 12s linear infinite;
+  animation: slide 30s linear infinite; /* más lento */
+  width: max-content;
   will-change: transform;
 }
 
@@ -78,7 +84,7 @@ export default {
 .carousel-image {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain; /* para que no se corten */
   border-radius: 8px;
 }
 
@@ -90,7 +96,7 @@ export default {
 }
 
 .product-name {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -99,13 +105,13 @@ export default {
   color: #007bff;
 }
 
-/* Animación para mover el carrusel de izquierda a derecha en bucle */
+/* Animación infinita sin cortes */
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 </style>

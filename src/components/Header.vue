@@ -2,7 +2,7 @@
   <header
     class="fixed top-0 left-0 w-full z-20 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-16 flex items-center px-6">
     <!-- Logo -->
-    <img src="@/assets/img/logo.png" alt="Logo" class="h-52 w-auto mt-6" />
+    <img src="@/assets/img/logo.png" alt="Logo" class="h-96 w-auto mt-4" />
 
     <!-- Menú de navegación -->
     <nav class="ml-auto">

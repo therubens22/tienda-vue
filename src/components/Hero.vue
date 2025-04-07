@@ -1,20 +1,29 @@
 <template>
-  <section class="hero bg-cover bg-center h-screen flex items-center justify-center text-white" :style="{ backgroundImage: 'url(' + bannerImage + ')' }">
-    <div class=" text-center backdrop-blur-xl bg-white/50 p-6 rounded-xl">
-      <h1 class="text-4xl font-bold mb-4">Bienvenidos a Nuestra Tienda</h1>
-      <p class="mb-6">Descubre nuestros productos exclusivos</p>
-      <button class="bg-gray-500 py-2 px-6 rounded-lg text-xl hover:bg-gray-800 transition duration-300">Ver Productos</button>
+  <section
+    class="hero bg-cover bg-center h-screen flex items-center justify-center text-white sm:px-10"
+    :style="{ backgroundImage: 'url(' + bannerImage + ')' }"
+  >
+    <div class="text-center backdrop-blur-xl bg-white/50 p-6 rounded-xl w-11/12 sm:w-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        Bienvenidos a Nuestra Tienda
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-600 mb-6">
+        Descubre nuestros productos exclusivos
+      </p>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm sm:text-base">
+        Ver Productos
+      </button>
     </div>
   </section>
 </template>
 
 <script>
-import bannerImage from '@/assets/img/banner.jpg'; // Usamos alias para importar la imagen
+import bannerImage from '@/assets/img/banner.jpg';
 
 export default {
   data() {
     return {
-      bannerImage: bannerImage // Establecemos la imagen en el objeto data
+      bannerImage
     };
   }
 };
@@ -25,14 +34,7 @@ export default {
   background-position: center;
   background-size: cover;
   height: 100vh;
-  color: rgb(255, 255, 255);
+  color: white;
   text-align: center;
-  text-align: center
 }
-
-
 </style>
-
-
-
-
