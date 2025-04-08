@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-gray-100 dark:bg-gray-900 py-10 px-5 mt-10 mb-0">
+    <section id="contact" class="bg-gray-100 dark:bg-gray-900 py-10 px-5 mt-10 mb-0">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-gray-800 dark:text-white">Contáctanos</h2>
         <p class="text-gray-600 dark:text-gray-300 mt-2">Estamos aquí para ayudarte. Conéctate con nosotros a través de nuestras redes.</p>

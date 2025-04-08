@@ -16,102 +16,101 @@ import sweaterVainilla from '../assets/img/sweaterVainilla.jpeg';
 import vipBlack from '../assets/img/vipBlack.jpeg';
 import yslLibre from '../assets/img/yslLibre.jpeg';
 
-
 export const products = [
   {
     id: 1,
     name: "Acqua di Gio - Armani Hombre",
-    price: "$95.00",
+    price: 95.00,
     image: acquaDiGio
   },
   {
     id: 2,
     name: "212 VIP Black Hombre",
-    price: "$110.00",
+    price: 110.00,
     image: vipBlack
   },
   {
     id: 3,
     name: "Bermuda de Jean Hombre",
-    price: "$40.00",
+    price: 40.00,
     image: bermudaJean
   },
   {
     id: 4,
     name: "Buzo Hoodie Hombre",
-    price: "$55.00",
+    price: 55.00,
     image: buzoHoddie
   },
   {
     id: 5,
     name: "Chanel Bleu Hombre",
-    price: "$120.00",
+    price: 120.00,
     image: chanelBleu
   },
   {
     id: 6,
     name: "Chanel Eau Tendre Mujer",
-    price: "$130.00",
+    price: 130.00,
     image: chanelTendre
   },
   {
     id: 7,
     name: "Falda de Jean Mujer",
-    price: "$35.00",
+    price: 35.00,
     image: faldaJean
   },
   {
     id: 8,
     name: "Falda Tablada Gris Mujer",
-    price: "$32.00",
+    price: 32.00,
     image: faldaTableada
   },
   {
     id: 9,
     name: "Jean Mujer Tiro Bajo",
-    price: "$60.00",
+    price: 60.00,
     image: jeanMujer
   },
   {
     id: 10,
     name: "Musculosa Blanca Mujer",
-    price: "$20.00",
+    price: 20.00,
     image: musculosaBlanca
   },
   {
     id: 11,
     name: "Musculosa Azul Oscuro Mujer",
-    price: "$22.00",
+    price: 22.00,
     image: musculosaAzul
   },
   {
     id: 12,
     name: "Remera Hombre Beige",
-    price: "$25.00",
+    price: 25.00,
     image: remeraBeige
   },
   {
     id: 13,
     name: "Remera Hombre Negra",
-    price: "$25.00",
+    price: 25.00,
     image: remeraNegra
   },
   {
     id: 14,
     name: "Sweater Color Crema Mujer",
-    price: "$45.00",
+    price: 45.00,
     image: sweaterCrema
   },
   {
     id: 15,
     name: "Sweater Vainilla Frij Mujer",
-    price: "$48.00",
+    price: 48.00,
     image: sweaterVainilla
   },
   {
     id: 16,
     name: "YSL Libre Mujer",
-    price: "$135.00",
+    price: 135.00,
     image: yslLibre
   }
 ];

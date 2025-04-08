@@ -1,44 +1,68 @@
 <template>
-  <div class="bg-white shadow-md rounded-lg overflow-hidden w-full sm:w-72">
-    <img :src="image" alt="Producto" class="w-full h-48 object-cover" />
-    <div class="p-4">
-      <h2 class="text-lg font-semibold">{{ title }}</h2>
-      <p class="text-sm text-gray-600 mb-2">{{ description }}</p>
-      <div class="flex justify-between items-center">
-        <span class="text-blue-600 font-bold">${{ price }}</span>
-        <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Agregar</button>
+  <div class="p-4 max-w-2xl mx-auto m-10">
+    <h2 class="text-2xl font-bold m-8 text-center">Carrito de Compras</h2>
+
+    <div v-if="cartItems.length === 0" class="text-gray-500 text-center">
+      El carrito está vacío.
+    </div>
+
+    <div v-else>
+      <ul class="space-y-4">
+        <li
+          v-for="item in cartItems"
+          :key="item.id"
+          class="border rounded-lg p-4 shadow-md bg-white text-center"
+        >
+          <h3 class="font-semibold text-lg mb-1">{{ item.name }}</h3>
+          <p class="text-sm text-gray-600">Cantidad: {{ item.quantity }}</p>
+          <p class="text-sm text-gray-600 mb-3">Precio: ${{ item.price }}</p>
+
+          <button
+            @click="removeFromCart(item.id)"
+            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+          >
+            Eliminar
+          </button>
+        </li>
+      </ul>
+
+      <div class="mt-6 font-semibold text-lg text-center">
+        Total: ${{ totalPrice }}
+      </div>
+
+      <div class="text-center mt-4">
+        <router-link
+          to="/checkout"
+          class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition"
+        >
+          Finalizar compra
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
-
-
 <script>
-import { LucideShoppingCart } from 'lucide-vue-next';
 import { useCartStore } from '@/stores/cartStore';
+import { computed } from 'vue';
 
 export default {
   name: 'Cart',
-  components: {
-    LucideShoppingCart
-  },
   setup() {
     const cartStore = useCartStore();
 
-    const checkout = () => {
-      if (cartStore.cartItems.length > 0) {
-        window.alert('Redirigiendo a pago...');
-        cartStore.clearCart();
-      }
+    // Computed para reactividad en cartItems
+    const cartItems = computed(() => cartStore.cartItems);
+
+    const totalPrice = computed(() =>
+      cartStore.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    );
+
+    return {
+      cartItems,
+      removeFromCart: cartStore.removeFromCart,
+      totalPrice
     };
-
-    console.log('Productos en el carrito:', cartStore.cartItems);
-
-    return { cartStore, checkout };
-  },
-  mounted() {
-    console.log('Cart.vue se ha montado');
   }
 };
 </script>

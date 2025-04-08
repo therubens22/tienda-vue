@@ -1,26 +1,33 @@
-<template>
-  <header
-    class="fixed top-0 left-0 w-full z-20 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-16 flex items-center px-6">
+<template >
+  <header 
+    :class="['fixed top-0 left-0 w-full z-20 h-20 flex items-center justify-between px-4 sm:px-6 transition-colors duration-300', 
+             isScrolled ? 'bg-blue-800 shadow-md' : 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700']"
+  >
     <!-- Logo -->
-    <img src="@/assets/img/logo.png" alt="Logo" class="h-96 w-auto mt-4" />
+    <div class="flex-shrink-0">
+      <img src="@/assets/img/logo.png" alt="Logo" class="h-12 w-auto sm:h-16" />
+    </div>
 
     <!-- Menú de navegación -->
-    <nav class="ml-auto">
-      <ul class="flex space-x-6 text-white">
+    <nav>
+      <ul class="flex items-center space-x-4 sm:space-x-6 text-white">
         <li>
-          <a href="#home" class="flex items-center">
-            <font-awesome-icon :icon="['fas', 'home']" class="mr-2" />
-          </a>
-        </li>
+  <router-link
+    to="/#home"
+    class="flex items-center"
+  >
+    <font-awesome-icon :icon="['fas', 'home']" class="text-xl hover:text-yellow-300" />
+  </router-link>
+</li>
+
         <li>
           <router-link to="/cart" class="flex items-center">
-            <font-awesome-icon :icon="['fas', 'shopping-cart']" class="mr-2" />
+            <font-awesome-icon :icon="['fas', 'shopping-cart']" class="text-xl hover:text-yellow-300" />
           </router-link>
-
         </li>
         <li>
           <a href="#contact" class="flex items-center">
-            <font-awesome-icon :icon="['fas', 'envelope']" class="mr-2" />
+            <font-awesome-icon :icon="['fas', 'envelope']" class="text-xl hover:text-yellow-300" />
           </a>
         </li>
       </ul>
@@ -30,18 +37,28 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      isScrolled: false
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50;
+    }
+  }
 };
 </script>
 
 <style scoped>
 header {
-  height: 60px;
-  /* Hace que el header sea más angosto */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  min-width: 320px;
 }
 </style>

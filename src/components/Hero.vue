@@ -1,5 +1,5 @@
 <template>
-  <section
+  <section id="home"
     class="hero bg-cover bg-center h-screen flex items-center justify-center text-white sm:px-10"
     :style="{ backgroundImage: 'url(' + bannerImage + ')' }"
   >
