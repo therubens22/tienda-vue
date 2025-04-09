@@ -10,9 +10,13 @@
       <p class="text-lg sm:text-xl text-gray-600 mb-6">
         Descubre nuestros productos exclusivos
       </p>
-      <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm sm:text-base">
-        Ver Productos
-      </button>
+      <router-link to="/productos">
+  <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm sm:text-base">
+    Ver Productos
+  </button>
+</router-link>
+
+
     </div>
   </section>
 </template>

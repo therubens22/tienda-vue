@@ -27,10 +27,11 @@
       <div class="flex flex-col">
         <h3 class="font-bold text-lg">Ayuda</h3>
         <ul class="mt-2 space-y-2">
-          <li><a href="#" class="hover:underline">Cómo comprar</a></li>
-          <li><a href="#" class="hover:underline">Tipos de envío</a></li>
-          <li><a href="#" class="hover:underline">Política de Reembolso y Devoluciones</a></li>
-        </ul>
+  <li><router-link to="/como-comprar" class="hover:underline">Cómo comprar</router-link></li>
+  <li><router-link to="/envios" class="hover:underline">Tipos de envío</router-link></li>
+  <li><router-link to="/politica-reembolso" class="hover:underline">Política de Reembolso y Devoluciones</router-link></li>
+</ul>
+
       </div>
 
     </div>

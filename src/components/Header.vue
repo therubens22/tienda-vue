@@ -4,8 +4,10 @@
              isScrolled ? 'bg-blue-800 shadow-md' : 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700']"
   >
     <!-- Logo -->
-    <div class="flex-shrink-0">
-      <img src="@/assets/img/logo.png" alt="Logo" class="h-12 w-auto sm:h-16" />
+    <div >
+      <img src="/src/assets/img/logo.png" alt="Logo" class="max-h-32 sm:max-h-48 object-contain my-4" />
+
+
     </div>
 
     <!-- Menú de navegación -->
